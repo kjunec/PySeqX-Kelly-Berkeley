@@ -137,7 +137,7 @@ class HiSeq():
         if com_ports is None:
             com_ports = get_com_ports('HiSeq2500')
 
-        self.y = ystage.Ystage(com_ports['ystage'], logger = Logger)
+        self.y = ystage.YstageX(com_ports['ystage'], logger = Logger)
         self.f = fpga.FPGA(com_ports['fpgacommand'], com_ports['fpgaresponse'], logger = Logger)
         self.x = xstage.Xstage(com_ports['xstage'], logger = Logger)
         self.lasers = {'green': laser.Laser(com_ports['laser1'], color = 'green',
